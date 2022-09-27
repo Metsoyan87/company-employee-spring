@@ -58,11 +58,11 @@ public class EmployeeController {
             file.transferTo(newFile);
             employee.setPicUrl(fileName);
         }
-//        Optional<Company> byId = companyRepository.findById(employee.getCompany().getId());
+       Optional<Company> byId = companyRepository.findById(employee.getCompany().getId());
         employeeRepository.save(employee);
-//        Company company = byId.get();
-//        company.setSize(company.getSize() + 1);
-//        companyRepository.save(company);
+       Company company = byId.get();
+        company.setSize(company.getSize() + 1);
+       companyRepository.save(company);
         return "redirect:/employee";
 
     }
