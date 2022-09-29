@@ -8,7 +8,6 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -31,8 +30,6 @@ public class EmployeeController {
     @Value("${company-employee-spring.images.folder}")
     private String folderPath;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -62,7 +59,6 @@ public class EmployeeController {
             employee.setPicUrl(fileName);
         }
 //        Optional<Company> byId = companyRepository.findById(employee.getCompany().getId());
-//        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
         employeeRepository.save(employee);
 //        Company company = byId.get();
 //        company.setSize(company.getSize() + 1);
