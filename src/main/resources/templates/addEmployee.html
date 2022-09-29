@@ -14,11 +14,13 @@
 
         <input type="email" name="email" placeholder="email"><br>
 
+        <input type="password" name="password" placeholder="password"><br>
+
         <input type="text" name="phoneNumber" placeholder="phoneNumber"><br>
 
         <input type="text" name="salary" placeholder="salary"><br>
 
-        <select name="companyId" >
+        <select name="companyId">
             <option th:each="company: ${companies}" th:value="${company.id}" th:text="${company.name}"></option>
         </select>
 
@@ -28,7 +30,7 @@
             <option value="EMPLOYEE">EMPLOYEE</option>
         </select><br>
 
-            <input type="file" id="file" name="file"><br><br>
+        <input type="file" id="file" name="file"><br><br>
 
         <input type="submit" value="add"/>
     </form>

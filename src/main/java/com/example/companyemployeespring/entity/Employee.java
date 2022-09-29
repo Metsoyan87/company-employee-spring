@@ -28,6 +28,8 @@ public class Employee {
     @ManyToOne
     private Company company;
     private String picUrl;
+    private String password;
+
 
 
 }

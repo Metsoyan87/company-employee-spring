@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <title>Employees</title>
@@ -34,6 +34,9 @@
         <td th:text ="${employee.company.id}"></td>
         <td><img th:if="${employee.picUrl != null}" th:src="@{/employee/getImage(fileName=${employee.picUrl})}"></td>
         <td><a th:href="@{/employee/delete(id=${employee.id})}">Delete</a></td>
+
+
+
     </tr>
 </table>
 
